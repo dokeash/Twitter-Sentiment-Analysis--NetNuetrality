@@ -6,5 +6,3 @@ print(model.most_similar("comcast"))
 print(model.most_similar("ajit"))
 print(model.doesnt_match("open plan action save".split()))
 print(model.wv.syn0.shape)
-
-
