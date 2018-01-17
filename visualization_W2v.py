@@ -33,13 +33,3 @@ plot_tfidf.scatter(x='x', y='y', source=tsne_df)
 hover = plot_tfidf.select(dict(type=HoverTool))
 hover.tooltips={"word": "@words"}
 show(plot_tfidf)
-
-#--------------------------------------------------------------tfidf-------------------------
-
-
-
-
-
-
-
-
