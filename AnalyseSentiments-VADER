@@ -4,7 +4,7 @@ from nltk import tokenize
 import pandas as pd
 import matplotlib.pyplot as plt
 
-tweet_files = ['#netNeutrality_2017-11-18.json','#netNeutrality_2017-11-19.json','#netNeutrality_2017-11-20.json','#netNeutrality_2017-11-21.json']
+tweet_files = ['#netNeutrality_2017-11-18.json]
 tweets_data = []
 for file in tweet_files:
     with open(file, 'r') as f:
