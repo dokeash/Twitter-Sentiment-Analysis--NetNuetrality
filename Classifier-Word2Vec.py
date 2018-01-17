@@ -148,7 +148,7 @@ testDataVecs = getAvgFeatureVecs(clean_test_reviews, model, 300)
 
 list_of_labels=['POSITIVE','NEUTRAL','NEGATIVE']
 
-#-----------------------------------------building model-----------------------
+#-----------------------------------------building Classification Model-----------------------
 # Fit a random forest to the training data, using 100 trees
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix
