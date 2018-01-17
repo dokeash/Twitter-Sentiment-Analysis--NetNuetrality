@@ -123,6 +123,8 @@ data.loc[data.sentiment_compound_polarity>0,'sentiment_type']='POSITIVE'
 data.loc[data.sentiment_compound_polarity==0,'sentiment_type']='NEUTRAL'
 data.loc[data.sentiment_compound_polarity<0,'sentiment_type']='NEGATIVE'
 
+#Check for imbalanced data using Sentiment Distribution Graph. If not, start training
+#----------------------------------------Training---------------------------------------
 #Train-Test Split
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV, RandomizedSearchCV
 train,test = train_test_split(data,test_size=0.3,random_state=42)
