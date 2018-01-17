@@ -15,17 +15,7 @@ for file in tweet_files:
 # Json to dataframe
 def populate_tweet_df(tweets):
     df = pd.DataFrame()
-    df['created_at'] = list(map(lambda tweet: tweet['created_at'], tweets))
     df['text'] = list(map(lambda tweet: tweet['text'], tweets))
-    # df['favorite_count'] = list(map(lambda tweet: tweet['favorite_count'], tweets))
-    df['favorited'] = list(map(lambda tweet: tweet['favorited'], tweets))
-    df['retweeted'] = list(map(lambda tweet: tweet['retweeted'], tweets))
-    df['id'] = list(map(lambda tweet: tweet['id'], tweets))
-    # df['entities'] = list(map(lambda tweet: tweet['entities'], tweets))
-    # df['user'] = list(map(lambda tweet: tweet['user'], tweets))
-    df['location'] = list(map(lambda tweet: tweet['user']['location'], tweets))
-    # df['lang'] = list(map(lambda tweet: tweet['lang'], tweets))
-    # df['country'] = list(map(lambda tweet: tweet['place']['country'] if tweet['place'] != None else None, tweets))
     return df
 
 
@@ -37,7 +27,7 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import *
 import re
 
-networds = []  # ['internet','netnuetrality']
+networds = ['internet','netnuetrality']
 
 def stem_tokens(tokens, stemmer):
     stemmed = []
@@ -78,6 +68,7 @@ data.loc[data.sentiment_compound_polarity == 0, 'sentiment_type'] = 'NEUTRAL'
 data.loc[data.sentiment_compound_polarity < 0, 'sentiment_type'] = 'NEGATIVE'
 print(data.head(2))
 
+#check for imbalanced data with bar chart. If not, start training
 # -------------training------------------------------------------------------------------------
 from sklearn.cross_validation import train_test_split
 import sklearn
@@ -95,8 +86,6 @@ from time import time
 from collections import Counter
 
 train, test = train_test_split(data, test_size=0.3, random_state=42)
-
-# Sentiment type distribution in training set
 
 
 train_clean_tweet = []
