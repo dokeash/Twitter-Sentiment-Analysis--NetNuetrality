@@ -68,7 +68,7 @@ data.loc[data.sentiment_compound_polarity == 0, 'sentiment_type'] = 'NEUTRAL'
 data.loc[data.sentiment_compound_polarity < 0, 'sentiment_type'] = 'NEGATIVE'
 print(data.head(2))
 
-#check for imbalanced data with bar chart. If not, start training
+#Check for imbalanced data with sentiment distribution graph. If not, start training
 # -------------training------------------------------------------------------------------------
 from sklearn.cross_validation import train_test_split
 import sklearn
