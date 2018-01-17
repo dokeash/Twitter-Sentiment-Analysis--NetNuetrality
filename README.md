@@ -1,0 +1,2 @@
+# Twitter-Sentiment-Analysis--NetNuetrality
+Twitter provides us with live access to opinions about any topic. This project attempts to solve the realworld problem of understanding the current sentiment towards Netneutrality based on the publics live opinions and emotions. Collected tweets have been cleaned and used to build classifiers with feature extraction methods such as Bag-of-words and word-to-vector, in order to build classifier and perform live sentiment analysis on Netneutrality.
